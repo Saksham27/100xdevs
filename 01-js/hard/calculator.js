@@ -16,6 +16,37 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+  constructor(){
+    result = 0;
+    regex = new RegExp('foo*');
+    
+  }
+  add(num){
+    result +=num;
+  }
+  substract(num){
+    result -=num;
+  }
+  multiply(num){
+    result *=num;
+  }
+  divide(num){
+    result /=num;
+  }
+  clear(){
+    result =0;
+  }
+  getResult(){
+    return result;
+  }
+  calulate(expression){
+    trimmedExp = expression.trim();
+    isvalidExp = regex.test(expression);
+    if(isvalidExp){
+      
+    }
+  }
+}
 
 module.exports = Calculator;

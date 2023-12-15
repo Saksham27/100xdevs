@@ -6,7 +6,23 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+  let output = [];
+  for (let i = 0; i < transactions.length; i++) {
+    let iscatagoryAlreadyAdded = false;
+    output.map((item)=>{
+      if(item["category"] == transactions[i].category){
+        item["totalSpent"] += transactions[i].price;
+iscatagoryAlreadyAdded = true;
+      }
+    })
+    if(!iscatagoryAlreadyAdded){
+      output.push({
+        "category" : transactions[i].category,
+        "totalSpent" : transactions[i].price
+      });
+    }
+  }
+  return output;
 }
 
 module.exports = calculateTotalSpentByCategory;
